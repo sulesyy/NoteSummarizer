@@ -139,6 +139,8 @@ iOS Developer
 ## ⭐ Project Goal
 
 This project was created to explore **AI-powered productivity tools on iOS**, combining **machine learning, OCR, and natural language processing** to simplify reading and note-taking workflows.
+
+
 <img width="432" height="946" alt="Ekran Resmi 2026-03-07 23 53 44" src="https://github.com/user-attachments/assets/e46f6d14-c0ff-4ed8-8210-c086734c9dda" />
 <img width="432" height="946" alt="Ekran Resmi 2026-03-07 23 54 30" src="https://github.com/user-attachments/assets/f671879d-2bce-4437-a49b-52396cf2cb91" />
 <img width="432" height="946" alt="Ekran Resmi 2026-03-07 23 54 03" src="https://github.com/user-attachments/assets/5eb27f5a-2217-41b0-9ea5-527e4ef448bd" />
