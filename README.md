@@ -1,144 +1,72 @@
-#  Notes AI – Smart Text Summarizer for iOS
+# Notes AI - iOS Text Summarizer
 
-Notes AI is a modern iOS application that summarizes long texts instantly using AI.
-The app allows users to summarize typed text, scanned documents, or PDF files into concise and readable summaries.
+Notes AI is a SwiftUI iOS app for summarizing long text, scanned documents, and PDF files. It combines OCR, PDF text extraction, text-to-speech, local history, theme support, and streaming AI summarization in one productivity-focused mobile experience.
 
-Built with **SwiftUI**, **VisionKit OCR**, **Natural Language Processing**, and **AI-powered summarization**.
+## Highlights
 
----
+- Summarizes typed or pasted text with selectable output styles
+- Imports PDF files and extracts readable text with PDFKit
+- Scans physical documents using VisionKit and Apple Vision OCR
+- Streams AI responses from the Groq API
+- Saves generated summaries locally for later access
+- Supports text-to-speech with language-aware voice selection
+- Includes copy, share, haptic feedback, and light/dark/system theme options
 
-##  Features
+## Tech Stack
 
-•  **AI Text Summarization**
-Generate intelligent summaries from long text inputs.
+- SwiftUI
+- VisionKit and Vision OCR
+- PDFKit
+- AVFoundation
+- NaturalLanguage
+- UserDefaults / local persistence
+- Streaming API integration
+- Groq API with LLaMA model
 
-•  **PDF Import Support**
-Extract text directly from PDF files and summarize it instantly.
+## Architecture
 
-•  **Document Scanner (OCR)**
-Scan physical documents using the device camera and convert them into text using Apple Vision OCR.
+The project is organized around reusable SwiftUI views and small helper managers:
 
-•  **Text to Speech**
-Listen to generated summaries with automatic language detection.
+- `ContentView` handles the main summarization workflow
+- `DocumentCameraView` wraps VisionKit document scanning
+- `SpeechManager` manages text-to-speech playback
+- `HapticManager` centralizes feedback interactions
+- `SavedSummary` stores summary history data
 
-•  **History System**
-All generated summaries are saved locally for later access.
+## How It Works
 
-•  **Share & Copy**
-Copy summaries to clipboard or share them via iOS share sheet.
+1. The user enters text, scans a document, or imports a PDF.
+2. The app extracts text when needed using Vision OCR or PDFKit.
+3. The selected summary style is sent to the AI API.
+4. The streamed result is displayed in the UI and saved locally.
+5. The user can copy, share, or listen to the summary.
 
-•  **Dark / Light / System Theme**
-User-selectable theme support.
+## Setup
 
-•  **Haptic Feedback**
-Interactive vibration feedback for better UX.
+Clone the repository:
 
----
+```bash
+git clone https://github.com/sulesyy/NoteSummarizer.git
+```
 
-##  Technologies Used
+Open the project in Xcode and run it on a real iOS device for camera scanning support.
 
-* SwiftUI
-* VisionKit
-* Vision OCR
-* AVFoundation (Text to Speech)
-* NaturalLanguage Framework
-* PDFKit
-* UserDefaults (Local Storage)
-* Streaming AI API Integration
-* Groq AI API (LLaMA 3.1 model)
-
----
-
-##  Screens
-
-Main capabilities include:
-
-* Writing or pasting text
-* Importing PDF documents
-* Scanning documents with camera
-* Choosing summary style:
-
-  * Short
-  * Detailed
-  * Bullet Points
-* Listening to summaries
-* Saving summaries automatically
-
----
-
-##  Architecture
-
-The project follows a modular SwiftUI structure including:
-
-* **ContentView** – Main UI and summarization workflow
-* **SpeechManager** – Text-to-Speech system
-* **HapticManager** – User feedback interactions
-* **DocumentCameraView** – OCR document scanning
-* **HistoryView** – Saved summaries interface
-
----
-
-##  How It Works
-
-1. User enters text, scans a document, or uploads a PDF
-2. The text is sent to an AI summarization API
-3. Streaming responses generate the summary in real time
-4. The summary is displayed and stored in local history
-
----
-
-##  API Setup
-
-Insert your API key in the following section of the code:
+Add your own Groq API key in the API configuration section before running the summarization feature:
 
 ```swift
 let apiKey = "YOUR_API_KEY_HERE"
 ```
 
-The app currently uses:
+Do not commit real API keys to the repository.
 
-```
-Groq AI API
-Model: llama-3.1-8b-instant
-```
+## Future Improvements
 
----
+- Move API key handling to a safer configuration layer
+- Add iCloud sync for summary history
+- Export summaries as PDF
+- Add multi-language app localization
+- Split the main view into smaller feature modules
 
-##  Installation
-
-Clone the repository:
-
-```
-git clone https://github.com/sulesyy/NoteSummarizer.git
-```
-
-Open the project in **Xcode** and run on a real device to use camera scanning features.
-
----
-
-##  Future Improvements
-
-* iCloud synchronization
-* Export summaries as PDF
-* Multi-language UI support
-* Offline summarization models
-* AI keyword extraction
-
----
-
-##  Developer
-
- Şule Yılmaz
- 
-Software Engineering Student
-
-iOS Developer
-
----
-
-## ⭐ Project Goal
-
-This project was created to explore **AI-powered productivity tools on iOS**, combining **machine learning, OCR, and natural language processing** to simplify reading and note-taking workflows.
 
 
 <img width="432" height="946" alt="Ekran Resmi 2026-03-07 23 53 44" src="https://github.com/user-attachments/assets/e46f6d14-c0ff-4ed8-8210-c086734c9dda" />
